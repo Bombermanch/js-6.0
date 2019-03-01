@@ -3,24 +3,29 @@
 /* 1 задание */
 
 var money = +prompt("Ваш бюджет на месяц?"),
-    time = prompt("Введите дату в формате YYYY-MM-DD", ""),
-    article = prompt("Введите обязательную статью расходов", ""),
-    amount = +prompt("Во сколько обойдётся?", ""),
+    time = prompt("Введите дату в формате YYYY-MM-DD", ""),    
     appData = {
         budget: money,
         timeData: time, 
-        expenses: {
-            article:amount
-        },
+        expenses: {},
         optionalExpenses : {},
         income: [],
-        savings: false
-        
-    };   
+        savings: false        
+    };
+    var answ1 = prompt("Введите обязательную статью расходов", ""),
+        answ2 = +prompt("Во сколько обойдётся?", ""),
+        answ3 = prompt("Введите обязательную статью расходов", ""),
+        answ4 = +prompt("Во сколько обойдётся?", "");
+    appData.expenses.answ1 = answ2;
+    appData.expenses.answ3 = answ4;
+
+    alert("Ваш бюджет на день: "+appData.budget/30);
+
+
     
     /*2 задание*/
     
-    alert("Ваш бюджет на день: "+appData.budget/30);
+    
 
     var num = "33721", // создаем переменную "num"
         multiplication = num[0]*num[1]*num[2]*num[3]*num[4]; // умножение цифр переменной

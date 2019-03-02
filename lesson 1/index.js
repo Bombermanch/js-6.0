@@ -12,14 +12,15 @@ var money = +prompt("Ваш бюджет на месяц?"),
         income: [],
         savings: false        
     };
-    var answ1 = prompt("Введите обязательную статью расходов", ""),
-        answ2 = +prompt("Во сколько обойдётся?", ""),
-        answ3 = prompt("Введите обязательную статью расходов", ""),
-        answ4 = +prompt("Во сколько обойдётся?", "");
-    appData.expenses.answ1 = answ2;
-    appData.expenses.answ3 = answ4;
+    var firstQuestion = prompt("Введите обязательную статью расходов", ""),
+        secondQuestion = +prompt("Во сколько обойдётся?", "");
+     
+    
+    appData.expenses[firstQuestion] = secondQuestion;
+    
 
     alert("Ваш бюджет на день: "+appData.budget/30);
+    console.log(appData.expenses.firstQuestion);
 
 
     

@@ -34,19 +34,11 @@ console.log(Math.sqrt(sum).toFixed(2)); // 4 пункт
 
 
 function stringRecovery (arg){
-    if (typeof arg != "string"){
-        
-    };
-}
-
-
-
-
-
-
-
-
-
-
-
-
+    if (typeof arg != "string"){        
+        alert("Аргумент не строка!");
+    }else{
+      let a = arg.trim(), // без пробелов      
+          shortArg = a.slice(0, 50);
+      if (shortArg.length < arg.length) {
+        return (a + "(...)");}    // 5 пункт 
+}}

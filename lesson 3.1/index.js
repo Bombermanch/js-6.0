@@ -1,15 +1,22 @@
 "use strict";
 
-let str = "урок-3-был слишком легкий";
-    str = str.replace(/-/g, ' ');
-    str = str.slice(-6);
-    str = str.replace(str.slice(-2), "oо");
+function replaceString(str, searchWord, changeWord){
+	let newStr =  str[0].toUpperCase() + str.slice(1).replace(/-/g, ' ');  // 1 пункт 
+		console.log(newStr); // 2 пункт
+	let easy = newStr.slice(newStr.indexOf(searchWord));		
+	let easyoo = easy.replace(easy.slice(-2), changeWord);
+		alert(easyoo); // 3 пункт
+	
+}
+replaceString('урок-3-был слишком легкий', "легкий", "оо"); 
 
-console.log(str);
+
+
+
 
 let arr = [20, 33, 1, "Человек", 2, 3];
 var sum = 0;
-function cube(){    
+function sumCubeNumber(){     
     for (let i = 0; i < arr.length; i++){
         
         if (isNaN(arr[i])) {              
@@ -22,9 +29,17 @@ function cube(){
                    
     }    
 }
-cube();
+sumCubeNumber();
+console.log(Math.sqrt(sum).toFixed(2)); // 4 пункт    
 
-console.log(Math.sqrt(sum));
+
+function stringRecovery (arg){
+    if (typeof arg != "string"){
+        
+    };
+}
+
+
 
 
 

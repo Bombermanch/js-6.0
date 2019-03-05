@@ -15,30 +15,31 @@ replaceString('урок-3-был слишком легкий', "легкий", "
 
 
 let arr = [20, 33, 1, "Человек", 2, 3];
-var sum = 0;
+let sum = 0,
+    sqrt;
+
 function sumCubeNumber(){     
     for (let i = 0; i < arr.length; i++){
         
-        if (isNaN(arr[i])) {              
-            arr.splice(i, i, i, i);
+        if (!isNaN(arr[i])) {              
+            sum += Math.pow(arr[i], 3);
+            sqrt = Math.sqrt(sum);
         } else{
-            arr[i] = Math.pow(arr[i], 3);
-            sum += arr[i];
-
-        } 
-                   
+            console.log("NaN");
+        }                   
     }    
 }
 sumCubeNumber();
-console.log(Math.sqrt(sum).toFixed(2)); // 4 пункт    
+console.log(sqrt.toFixed(2)); // 4 пункт    
 
 
 function stringRecovery (arg){
     if (typeof arg != "string"){        
         alert("Аргумент не строка!");
-    }else{
-      let a = arg.trim(), // без пробелов      
-          shortArg = a.slice(0, 50);
-      if (shortArg.length < arg.length) {
-        return (a + "(...)");}    // 5 пункт 
-}}
+    }else if(arg.length > 50){
+        alert(arg.trim().slice(0, 50) + '(...)');
+    }else {
+        alert(arg.trim());
+    }
+}
+stringRecovery(' fffggfggfgfg   ');

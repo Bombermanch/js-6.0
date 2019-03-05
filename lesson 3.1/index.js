@@ -25,7 +25,7 @@ function sumCubeNumber(){
             sum += Math.pow(arr[i], 3);
             sqrt = Math.sqrt(sum);
         } else{
-            console.log("NaN");
+            sqrt = "NaN";
         }                   
     }    
 }

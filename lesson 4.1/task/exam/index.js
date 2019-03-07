@@ -1,10 +1,13 @@
 function getFriendlyNumbers(start, end) {
     let num1, num2;
-    for(let i = start; i < end; i++){
-        if (num2 == sumDiv(num1) && num1 == sumDiv(num2)){
-            
-            
-        }
+    for(let i = start; i < end; i++){   
+        
+    let divArr = getDiv(i);     
+        sumArr = sumDiv(divArr);
+             
+          
+    }
+    
          
       
     
@@ -26,6 +29,7 @@ function sumDiv(arr){
     }
     return sum;
 }
+
 
 
 

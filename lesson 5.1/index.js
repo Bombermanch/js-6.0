@@ -43,5 +43,8 @@ function getDifference(){
     let firstDate = document.querySelector('#firstDate'),
         secondDate = document.querySelector('#firstDate'),
         result = document.querySelector('#result');
-        
-}       
+        result.value = +firstDate.value - +secondDate.value;
+
+}
+getDifference(); 
+     

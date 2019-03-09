@@ -28,11 +28,15 @@ var money = +prompt("Ваш бюджет на месяц?"),
     
     
 
-    var num = "33721", // создаем переменную "num"
-        multiplication = num[0]*num[1]*num[2]*num[3]*num[4]; // умножение цифр переменной
-        console.log(multiplication); // вывод в консоль результата
-    var cube = multiplication**3;
-        console.log(String(cube)[0]+String(cube)[1])
+    var num = "33721"; // создаем переменную "num"
+        for (let i = 0; i < num.length; i++){ // умножение цифр переменной
+            var mult = 1;
+            mult *= +num[i];
+            console.log(mult);
+        } 
+    
+       
+    
     
     
     

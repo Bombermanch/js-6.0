@@ -53,20 +53,59 @@ expensesBtn.addEventListener('click', function(){
     expensesValue.textContent = sum;
 });
 
-for (i = 0; i < expensesItem.length; i++){
-    expensesItem[i].addEventListener('input', function(){
-        for (i = 0; i < expensesItem.length; i++){
-            if (expensesItem[i].value == undefined || expensesItem[i].value == ''){
-                expensesBtn.disabled = true;
-                expensesBtn.style.background = 'gray';
-                expensesBtn.style.cursor = 'not-allowed';
-            } else if (expensesItem[i].value != undefined || expensesItem[i].value != ''){
-                expensesBtn.disabled = false;
-                expensesBtn.style.background = 'orange'; 
-            }
+function disabledBtn(){
+    // Обязательные расходы
+    for (i = 0; i < expensesItem.length; i++){
+        if (expensesItem[i].value == ""){
+            expensesBtn.style.background = 'gray';
+            expensesBtn.style.cursor = 'not-allowed';
         }
-    });
+        expensesItem[i].addEventListener('input', function(){
+            for (i = 0; i < expensesItem.length; i++){
+                if (expensesItem[i].value == undefined || expensesItem[i].value == ''){
+                    expensesBtn.disabled = true;
+                    expensesBtn.style.background = 'gray';
+                    expensesBtn.style.cursor = 'not-allowed';
+                } else if (expensesItem[i].value != undefined || expensesItem[i].value != ''){
+                    expensesBtn.disabled = false;
+                    expensesBtn.style.cursor = 'pointer';
+                    expensesBtn.style.background = 'orange'; 
+                }
+            }
+        });
+    }
+    // Необязательные расходы
+    for (i = 0; i < optionalExpensesItem.length; i++){
+        if (optionalExpensesItem[i].value == ""){
+            optionalExpensesBtn.style.background = 'gray';
+            optionalExpensesBtn.cursor = 'not-allowed';
+        }
+        optionalExpensesItem[i].addEventListener('input', function(){
+            for (i = 0; i < optionalExpensesItem.length; i++){
+                if (optionalExpensesItem[i].value == undefined || optionalExpensesItem[i].value == ''){
+                    optionalExpensesBtn.disabled = true;
+                    optionalExpensesBtn.style.background = 'gray';
+                    optionalExpensesBtn.style.cursor = 'not-allowed';
+                } else if (optionalExpensesItem[i].value != undefined || expensesItem[i].value != ''){
+                    optionalExpensesBtn.disabled = false;
+                    optionalExpensesBtn.style.cursor = 'pointer';
+                    optionalExpensesBtn.style.background = 'orange'; 
+                }
+            }
+        });
+    }
+
+    // дневной бюджет
+    if (appData.budget == "" || appData.budget == undefined){
+        calcBtn.style.background = 'gray';
+        calcBtn.cursor = 'not-allowed';
+    }
+
+    
 }
+
+disabledBtn();
+
 
 
 

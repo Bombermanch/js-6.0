@@ -96,10 +96,7 @@ function disabledBtn(){
     }
 
     // дневной бюджет
-    if (appData.budget == "" || appData.budget == undefined){
-        calcBtn.style.background = 'gray';
-        calcBtn.cursor = 'not-allowed';
-    }
+    
 
     
 }
@@ -252,4 +249,15 @@ let appData = {
         }
     }   
 
-};  
+}; 
+
+
+if (appData.budget == '' || appData.budget == undefined){
+    calcBtn.style.background = 'gray';
+    calcBtn.style.cursor = 'not-allowed';
+    calcBtn.disabled = true;
+} else{
+    calcBtn.style.background = 'gray';
+    calcBtn.style.cursor = 'pointer';
+    calcBtn.disabled = false;
+}

@@ -1,16 +1,19 @@
-window.addEventListener('DOMcontentLoaded', function(){
+window.addEventListener('DOMContentLoaded', function(){
     'use strict';
+    
     let tab = document.querySelectorAll('.info-header-tab'),
         info = document.querySelector('.info-header'),
         tabContent = document.querySelectorAll('.info-tabcontent');
-
+        
     function hideTabContent(a){
-        for (i = a; i < tabContent.length; i++){
+        for (let i = a; i < tabContent.length; i++){
             tabContent[i].classList.remove('show');
-            tabContent[i].classList.add('hide');
+            tabContent[i].classList.add('hide');            
         }
     }
     hideTabContent(1);
+    
+    
 
     function showTabContent(b){
         if (tabContent[b].classList.contains('hide')){
@@ -31,4 +34,6 @@ window.addEventListener('DOMcontentLoaded', function(){
             }
         }
     });
+    
 });
+    

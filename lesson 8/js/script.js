@@ -81,6 +81,22 @@ window.addEventListener('DOMContentLoaded', function(){
     
 
     setClock('timer', deadline);
+
+    // Плавная прокрутка
+
+    let anchors = document.querySelectorAll('a[href*="#"]')
+
+    for (let elem of anchors) {
+    elem.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        let linkElem = elem.getAttribute('href');
+        
+        document.querySelector('' + linkElem).scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
+    });
     
 });
     

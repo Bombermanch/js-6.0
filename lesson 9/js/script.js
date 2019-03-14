@@ -90,7 +90,8 @@ window.addEventListener('DOMContentLoaded', function(){
     for (let i = 0; i < btn.length; i++){
         btn[i].addEventListener('click', function(){
             overlay.style.display = 'block';
-            btn[i].classList.add('more-splash');          
+            btn[i].classList.add('more-splash');
+            document.body.style.overflow = 'hidden';          
             
         });
         
@@ -99,12 +100,14 @@ window.addEventListener('DOMContentLoaded', function(){
     more.addEventListener('click', function(){
         overlay.style.display = 'block';
         more.classList.add('more-splash');
+        document.body.style.overflow = 'hidden';
         
         
     });
     popupClose.addEventListener('click', function(){
         overlay.style.display = 'none';
         more.classList.remove('more-splash');
+        document.body.style.overflow = '';
     });
 
     // Модеальное окно в табах

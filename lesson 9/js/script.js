@@ -84,7 +84,17 @@ window.addEventListener('DOMContentLoaded', function(){
 
     let more = document.querySelector('.more'),
         overlay = document.querySelector('.overlay'),
-        popupClose = document.querySelector('.popup-close');
+        popupClose = document.querySelector('.popup-close'),
+        btn = document.querySelectorAll('.description-btn');
+
+    for (let i = 0; i < btn.length; i++){
+        btn[i].addEventListener('click', function(){
+            overlay.style.display = 'block';
+            btn[i].classList.add('more-splash');          
+            
+        });
+        
+    }
 
     more.addEventListener('click', function(){
         overlay.style.display = 'block';
@@ -96,6 +106,12 @@ window.addEventListener('DOMContentLoaded', function(){
         overlay.style.display = 'none';
         more.classList.remove('more-splash');
     });
+
+    // Модеальное окно в табах
+
+    
+
+    
     
 });
     

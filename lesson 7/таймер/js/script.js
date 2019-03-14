@@ -1,4 +1,5 @@
 
+
 function addTimer(){    
     let date = new Date(),
         hours = date.getHours(),
@@ -18,5 +19,6 @@ function addTimer(){
 
 }
 setInterval(addTimer, 1000);
+
 
 

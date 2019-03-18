@@ -127,7 +127,7 @@ window.addEventListener('DOMContentLoaded', () => { // ES6
         });
     }
 
-    // ajax
+    // ajax модальное окно
 
     let message = {
         loading: 'Загрузка...',
@@ -136,42 +136,90 @@ window.addEventListener('DOMContentLoaded', () => { // ES6
     };
 
     let form = document.querySelector('.main-form'),
-        input = form.getElementsByTagName('input'),
+        contactForm = document.querySelector('#form'),
+        contactInput = contactForm.getElementsByTagName('input'),
+        input = form.getElementsByTagName('input'),        
         statusMessage = document.createElement('div');
-        
-
         statusMessage.classList.add('status');
-        form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        form.appendChild(statusMessage);
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            form.appendChild(statusMessage);          
 
-        let request = new XMLHttpRequest();
-        request.open('POST', 'server.php');
-        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            let request = new XMLHttpRequest();
+            request.open('POST', 'server.php');
+            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-        let formData = new FormData(form);
+            let formData = new FormData(form);
 
-        let obj = {};
-        formData.forEach((value, key) =>{
-            obj[key] = value;
-        });
-        let json = JSON.stringify(obj);
-        request.send(json);
+            let obj = {};
+            formData.forEach(function(value, key){
+                obj[key] = value;
+            });
+            let json = JSON.stringify(obj);
+            request.send(json);
 
-        request.addEventListener('readystatechange', () =>{
-            if (request.readyState < 4){
-                statusMessage.innerHTML = massage.loading;                
-            } else if(request.readyState === 4 && request.status == 200){
-                statusMessage.innerHTML = message.success;
-            } else {
-                statusMessage.innerHTML = message.failure;
-            }
-        });
+            request.addEventListener('readystatechange', () =>{
+                if (request.readyState < 4){
+                    statusMessage.innerHTML = message.loading;                
+                } else if(request.readyState === 4 && request.status == 200){
+                    statusMessage.innerHTML = message.success;
+                } else {
+                    statusMessage.innerHTML = message.failure;
+                }
+            });
             for(let i = 0; i < input.length; i++){
                 input[i].value = '';
             }
-    });
+        });
 
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            contactForm.appendChild(statusMessage);          
+
+            let request = new XMLHttpRequest();
+            request.open('POST', 'server.php');
+            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            let formData = new FormData(form);
+
+            let obj = {};
+            formData.forEach(function(value, key){
+                obj[key] = value;
+            });
+            let json = JSON.stringify(obj);
+            request.send(json);
+
+            request.addEventListener('readystatechange', () =>{
+                if (request.readyState < 4){
+                    statusMessage.innerHTML = message.loading;                
+                } else if(request.readyState === 4 && request.status == 200){
+                    statusMessage.innerHTML = message.success;
+                } else {
+                    statusMessage.innerHTML = message.failure;
+                }
+            });
+            for(let i = 0; i < contactInput.length; i++){
+                contactInput[i].value = '';
+            }
+        }); 
+        let phone = contactForm.getElementsByTagName('input')[1]; 
+        phone.addEventListener('input', () =>{
+            if(!validation(phone.value)){
+                
+                    phone.value = phone.value.slice(0,-1);
+                
+                
+            }
+        });
+        function validation (input)  {
+    
+            return /(^(8|\+7)\d{0,10}|^\+\d{0,11})$/.test(input);
+        }     
+
+
+
+        
     
     
 });

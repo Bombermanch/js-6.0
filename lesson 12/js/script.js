@@ -294,9 +294,9 @@ window.addEventListener('DOMContentLoaded', () => { // ES6
                 totalValue.innerHTML = total;
             }
         });
-        
+
         place.addEventListener('change', function(){
-            if (restDays.value == '' || persons.value == ''){
+            if (restDays.value == '' || person.value == ''){
                 totalValue.innerHTML = 0;
                 
             }else{                
@@ -304,11 +304,7 @@ window.addEventListener('DOMContentLoaded', () => { // ES6
                 totalValue.innerHTML = a * this.options[this.selectedIndex].value;
             }
         });
-        for (let i = 0; i < counterBlock.length; i++){
-            /\D/.test(counterBlock[i].getElementsByTagName('input'))
-                
-            
-        }
+        
         
             
         

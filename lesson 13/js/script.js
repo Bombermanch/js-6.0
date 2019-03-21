@@ -270,7 +270,8 @@ window.addEventListener('DOMContentLoaded', () => { // ES6
         personSum = 0,
         daysSum = 0,
         total = 0,
-        counterBlock = document.querySelectorAll('.counter-block');
+        counterBlockInput = document.querySelectorAll('.counter-block-input');
+        
 
         totalValue.innerHTML = 0;
 
@@ -278,7 +279,7 @@ window.addEventListener('DOMContentLoaded', () => { // ES6
             personSum = +this.value;
             total = (daysSum + personSum)*4000;
 
-            if(restDays.value == '') {
+            if(restDays.value == '' || persons.value == '' || restDays.value == '0' || persons.value == '0') {
                 totalValue.innerHTML = 0;
             } else{
                 totalValue.innerHTML = total;
@@ -288,7 +289,7 @@ window.addEventListener('DOMContentLoaded', () => { // ES6
             daysSum = +this.value;
             total = (daysSum + personSum)*4000;
 
-            if(persons.value == '') {
+            if(restDays.value == '' || persons.value == '' || restDays.value == '0' || persons.value == '0') {
                 totalValue.innerHTML = 0;
             } else{                
                 totalValue.innerHTML = total;
@@ -296,7 +297,7 @@ window.addEventListener('DOMContentLoaded', () => { // ES6
         });
         
         place.addEventListener('change', function(){
-            if (restDays.value == '' || persons.value == ''){
+            if (restDays.value == '' || persons.value == '' || restDays.value == '0' || persons.value == '0'){
                 totalValue.innerHTML = 0;
                 
             }else{                
@@ -304,11 +305,20 @@ window.addEventListener('DOMContentLoaded', () => { // ES6
                 totalValue.innerHTML = a * this.options[this.selectedIndex].value;
             }
         });
-        for (let i = 0; i < counterBlock.length; i++){
-            if (/\D/.test(counterBlock[i].getElementsByTagName('input'))){
-                
-            }
+        function validCounterBlockInput(input){
+            
+            return /\d/.test(input)
         }
+        for (let i = 0; i < counterBlockInput.length; i++){
+            counterBlockInput[i].addEventListener('input', function(){
+                if (!validCounterBlockInput(counterBlockInput[i].value)){
+                    counterBlockInput[i].value = counterBlockInput[i].value.slice(0, -1);
+                }
+            })
+            
+        }
+
+        
         
             
         

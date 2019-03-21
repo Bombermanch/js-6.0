@@ -305,9 +305,9 @@ window.addEventListener('DOMContentLoaded', () => { // ES6
             }
         });
         for (let i = 0; i < counterBlock.length; i++){
-            if (/\D/.test(counterBlock[i].getElementsByTagName('input'))){
+            /\D/.test(counterBlock[i].getElementsByTagName('input'))
                 
-            }
+            
         }
         
             

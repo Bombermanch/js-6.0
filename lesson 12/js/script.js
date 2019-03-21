@@ -296,7 +296,7 @@ window.addEventListener('DOMContentLoaded', () => { // ES6
         });
         
         place.addEventListener('change', function(){
-            if (restDays.value == '' || person.value == ''){
+            if (restDays.value == '' || persons.value == ''){
                 totalValue.innerHTML = 0;
                 
             }else{                

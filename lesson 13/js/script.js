@@ -316,9 +316,7 @@ window.addEventListener('DOMContentLoaded', () => { // ES6
                 }
             })
             
-        }
-
-        
+        }      
         
             
         

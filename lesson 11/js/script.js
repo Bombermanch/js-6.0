@@ -212,6 +212,24 @@ window.addEventListener('DOMContentLoaded', () => { // ES6
                 
             }
         });
+        phone.addEventListener('input', () =>{
+            if(!validation(phone.value)){
+                
+                    phone.value = phone.value.slice(0,-1);
+                
+                
+            }
+        });
+        input[0].addEventListener('input', function(){
+            if(!validation(input.value[0])){
+                
+                input.value = input[0].value.slice(0,-1);
+                
+                
+        }
+        })
+        
+
         function validation (input)  {
     
             return /(^(8|\+7)\d{0,10}|^\+\d{0,11})$/.test(input);

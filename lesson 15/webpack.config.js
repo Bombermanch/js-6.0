@@ -1,7 +1,7 @@
 'use strict';
 
 let path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
 
 
 module.exports = {
@@ -31,16 +31,12 @@ module.exports = {
                   chrome: "67",
                   safari: "11.1",
                   ie: "11"
-                },
-                useBuiltIns: "usage"
+                }
               }]
             ]
           }
         }
       }
     ]
-  },
-  plugins: [
-    new UglifyJsPlugin()
-  ]
+  }  
 };

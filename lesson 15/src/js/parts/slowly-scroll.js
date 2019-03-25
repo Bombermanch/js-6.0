@@ -1,5 +1,6 @@
 function scroll (){
-    let anchors = document.querySelectorAll('a[href*="#"]')
+    "use strict";
+    let anchors = document.querySelectorAll('a')
 
     for (let elem of anchors) {
         elem.addEventListener('click', (e) => { // ES6
@@ -9,10 +10,10 @@ function scroll (){
             
             document.querySelector('' + linkElem).scrollIntoView({
                 behavior: 'smooth',
-                block: 'center'
+                block: 'start'
             });
         });
     }    
 }
 
-module.export = scroll;
+module.exports = scroll;

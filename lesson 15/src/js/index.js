@@ -1,3 +1,6 @@
+require('es6-promise').polyfill();
+require('nodelist-foreach-polyfill');
+require('formdata-polyfill');
 window.addEventListener('DOMContentLoaded', () => { // ES6
     'use strict';
     
@@ -6,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => { // ES6
         modal = require('./parts/modal.js'),
         scroll = require('./parts/slowly-scroll.js'),
         ajax = require('./parts/ajax.js'),
-        valid = require('./parts/valid.js'),
+        valid = require('./parts/valid-input.js'),
         slider = require('./parts/slider.js'),
         calculator = require('./parts/calculator.js');
     tabs();

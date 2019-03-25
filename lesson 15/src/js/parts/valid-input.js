@@ -1,4 +1,5 @@
 function valid(){
+    "use strict";
     let phone = document.getElementsByName('phone');
     for(let i = 0; i < phone.length; i++){
         phone[i].addEventListener('input', () =>{
@@ -15,4 +16,4 @@ function valid(){
     }
 }
 
-module.export = valid;
+module.exports = valid;

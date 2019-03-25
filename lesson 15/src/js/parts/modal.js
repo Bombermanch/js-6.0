@@ -1,4 +1,5 @@
 function modal (){
+    "use strict";
     let more = document.querySelector('.more'),
         overlay = document.querySelector('.overlay'),
         popupClose = document.querySelector('.popup-close'),
@@ -28,4 +29,4 @@ function modal (){
     });
 }
 
-module.export = modal;
+module.exports = modal;

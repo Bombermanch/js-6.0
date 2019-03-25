@@ -1,4 +1,5 @@
 function slider(){
+    "use strict";
     let slideIndex = 1,
         slides = document.querySelectorAll('.slider-item'),
         prev = document.querySelector('.prev'),
@@ -44,4 +45,4 @@ function slider(){
     });
 }
 
-module.export = slider;
+module.exports = slider;

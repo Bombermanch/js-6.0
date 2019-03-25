@@ -1,5 +1,6 @@
 function timer(){
-    let deadline = '2019-03-16 09:00:00';
+    "use strict";
+    let deadline = '2019-04-16 09:00:00';
     function getTimeRemaining(endtime){
         let t = Date.parse(endtime) - Date.parse(new Date());
         if (t < 0){
@@ -43,4 +44,4 @@ function timer(){
     setClock('timer', deadline);
 }
 
-module.export = timer;
+module.exports = timer;

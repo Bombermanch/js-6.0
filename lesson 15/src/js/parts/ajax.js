@@ -65,4 +65,4 @@ function ajax(){
     sendForm(contactForm); //end send form
 }
 
-module.export = ajax;
+module.exports = ajax;

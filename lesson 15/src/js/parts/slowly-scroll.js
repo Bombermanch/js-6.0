@@ -1,6 +1,6 @@
 function scroll (){
     "use strict";
-    let anchors = document.querySelectorAll('a')
+    let anchors = document.querySelectorAll('a');
 
     for (let elem of anchors) {
         elem.addEventListener('click', (e) => { // ES6

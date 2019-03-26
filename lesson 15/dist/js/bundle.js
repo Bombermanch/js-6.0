@@ -1574,7 +1574,6 @@ window.addEventListener('DOMContentLoaded', function () {
   var tabs = __webpack_require__(/*! ./parts/tabs.js */ "./src/js/parts/tabs.js"),
       timer = __webpack_require__(/*! ./parts/timer.js */ "./src/js/parts/timer.js"),
       modal = __webpack_require__(/*! ./parts/modal.js */ "./src/js/parts/modal.js"),
-      scroll = __webpack_require__(/*! ./parts/slowly-scroll.js */ "./src/js/parts/slowly-scroll.js"),
       ajax = __webpack_require__(/*! ./parts/ajax.js */ "./src/js/parts/ajax.js"),
       valid = __webpack_require__(/*! ./parts/valid-input.js */ "./src/js/parts/valid-input.js"),
       slider = __webpack_require__(/*! ./parts/slider.js */ "./src/js/parts/slider.js"),
@@ -1848,58 +1847,6 @@ function slider() {
 }
 
 module.exports = slider;
-
-/***/ }),
-
-/***/ "./src/js/parts/slowly-scroll.js":
-/*!***************************************!*\
-  !*** ./src/js/parts/slowly-scroll.js ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function scroll() {
-  "use strict";
-
-  var anchors = document.querySelectorAll('a');
-  var _iteratorNormalCompletion = true;
-  var _didIteratorError = false;
-  var _iteratorError = undefined;
-
-  try {
-    var _loop = function _loop() {
-      var elem = _step.value;
-      elem.addEventListener('click', function (e) {
-        // ES6
-        e.preventDefault();
-        var linkElem = elem.getAttribute('href');
-        document.querySelector('' + linkElem).scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      });
-    };
-
-    for (var _iterator = anchors[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      _loop();
-    }
-  } catch (err) {
-    _didIteratorError = true;
-    _iteratorError = err;
-  } finally {
-    try {
-      if (!_iteratorNormalCompletion && _iterator.return != null) {
-        _iterator.return();
-      }
-    } finally {
-      if (_didIteratorError) {
-        throw _iteratorError;
-      }
-    }
-  }
-}
-
-module.exports = scroll;
 
 /***/ }),
 

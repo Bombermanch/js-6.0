@@ -1,6 +1,12 @@
 function timer(){
-    "use strict";
-    let deadline = '2019-04-16 09:00:00';
+    "use strict";    
+    function getNormalisedDatetime(dString) { // yyyy-mm-dd hh:mm:ss
+        let parts = dString.split(" "),
+            dParts = parts[0].split("-"),
+            tParts = parts[1].split(":");
+        return new Date(dParts[0],dParts[1]-1,dParts[2],tParts[0],tParts[1],tParts[2]);
+    }    
+    let deadline = getNormalisedDatetime('2019-04-16 09:00:00');
     function getTimeRemaining(endtime){
         let t = Date.parse(endtime) - Date.parse(new Date());
         if (t < 0){

@@ -10,7 +10,7 @@ function scroll (){
             
             document.querySelector('' + linkElem).scrollIntoView({
                 behavior: 'smooth',
-                block: 'start'
+                block: 'center'
             });
         });
     }    

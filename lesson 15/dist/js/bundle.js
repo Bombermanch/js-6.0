@@ -1910,7 +1910,15 @@ module.exports = tabs;
 function timer() {
   "use strict";
 
-  var deadline = '2019-04-16 09:00:00';
+  function getNormalisedDatetime(dString) {
+    // yyyy-mm-dd hh:mm:ss
+    var parts = dString.split(" "),
+        dParts = parts[0].split("-"),
+        tParts = parts[1].split(":");
+    return new Date(dParts[0], dParts[1] - 1, dParts[2], tParts[0], tParts[1], tParts[2]);
+  }
+
+  var deadline = getNormalisedDatetime('2019-04-16 09:00:00');
 
   function getTimeRemaining(endtime) {
     var t = Date.parse(endtime) - Date.parse(new Date());

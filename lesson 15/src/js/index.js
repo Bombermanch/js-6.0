@@ -6,8 +6,7 @@ window.addEventListener('DOMContentLoaded', () => { // ES6
     
     let tabs = require('./parts/tabs.js'),
         timer = require('./parts/timer.js'),
-        modal = require('./parts/modal.js'),
-        
+        modal = require('./parts/modal.js'),        
         ajax = require('./parts/ajax.js'),
         valid = require('./parts/valid-input.js'),
         slider = require('./parts/slider.js'),
